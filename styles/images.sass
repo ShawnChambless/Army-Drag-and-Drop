@@ -1,0 +1,44 @@
+header
+  height: 200px
+  width: 100%
+  max-width: 900px
+  margin: 0 auto
+  display: flex
+  justify-content: space-between
+
+.title
+  position: absolute
+  top: 120px
+  text-align: center
+  width: 50%
+  font-size: 2em
+
+.player_1, .player_2
+  height: 100%
+  min-width: 50%
+  display: flex
+  justify-content: center
+
+.container
+  position: relative
+  margin: 10px 10px
+.container, .play_container
+  width: $container_width
+  height: $container_width
+  box-shadow: 0 0 3px #666, 0 0 3px #999 inset
+  transition: 60ms all ease-in-out
+  &:hover
+    box-shadow: 0 0 5px #444, 0 0 3px #999 inset
+.draggable
+  position: absolute
+  height: 100px
+  left: 0
+  top: 0
+  opacity: 1
+  transition: 60ms opacity ease-in-out
+  &:hover
+    cursor: move
+  &:active
+    opacity: 0.7
+  &.rotate90
+    transform: rotateY(180deg)

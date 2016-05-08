@@ -1,0 +1,124 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+header {
+  height: 200px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.title {
+  position: absolute;
+  top: 120px;
+  text-align: center;
+  width: 50%;
+  font-size: 2em;
+}
+
+.player_1, .player_2 {
+  height: 100%;
+  min-width: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  position: relative;
+  margin: 10px 10px;
+}
+
+.container, .play_container {
+  width: 108px;
+  height: 108px;
+  box-shadow: 0 0 3px #666, 0 0 3px #999 inset;
+  -webkit-transition: 60ms all ease-in-out;
+  transition: 60ms all ease-in-out;
+}
+
+.container:hover, .play_container:hover {
+  box-shadow: 0 0 5px #444, 0 0 3px #999 inset;
+}
+
+.draggable {
+  position: absolute;
+  height: 100px;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  -webkit-transition: 60ms opacity ease-in-out;
+  transition: 60ms opacity ease-in-out;
+}
+
+.draggable:hover {
+  cursor: move;
+}
+
+.draggable:active {
+  opacity: 0.7;
+}
+
+.draggable.rotate90 {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.play_area {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 500px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.left, .right {
+  height: 100%;
+  width: 108px;
+  margin: 0 70px;
+}
+
+.play_container img {
+  position: static;
+  margin: 1px 1px;
+}
+
+.fight_prompt {
+  position: absolute;
+  left: 50%;
+  top: 300px;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.fight_prompt input {
+  cursor: pointer;
+  border: none;
+  height: 50px;
+  width: 200px;
+  display: none;
+}
