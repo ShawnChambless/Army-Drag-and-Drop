@@ -124,6 +124,7 @@ header {
 }
 
 .fight_prompt #results {
+  display: none;
   margin: -100px auto 0 auto;
   height: 300px;
   width: 500px;

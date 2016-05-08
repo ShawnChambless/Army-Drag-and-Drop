@@ -67,7 +67,7 @@
           else player2TotalHealth = player2TotalHealth + item.health;
 
           player1Results.innerHTML += '<div class="piece">' + '<strong>Side:</strong> ' + item.side + ' ' + '<strong>Piece:</strong> ' + item.piece + ' ' + '<strong>Damage:</strong> ' + item.damage + ' ' + '<strong>Health:</strong> ' + item.health + '</div>' + '<br>';
-
+          resultsArea.style.display = 'block';
         });
         fightButton.style.display = 'none';
         return pieces, player1TotalHealth, player2TotalHealth;
