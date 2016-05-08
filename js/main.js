@@ -1,16 +1,14 @@
 (function() {
   'use strict';
 
-  window.addEventListener('load', runDrag, false);
 
-  function runDrag() {
-    window.removeEventListener('load', runDrag, false);
     var images = document.getElementsByClassName('draggable'),
       target = document.getElementsByClassName('target'),
       pieces = [],
       player1TotalHealth = 0,
       player2TotalHealth = 0,
-      fightButton = document.getElementById('fight_button');
+      fightButton = document.getElementById('fight_button'),
+      resultsArea = document.getElementById('results');
 
       fightButton.addEventListener('mousedown', fight, false);
 
@@ -56,6 +54,9 @@
 
       }
       function fight() {
+        var player1Results = document.getElementById('player1_results'),
+        player2Results = document.getElementById('player2_results');
+
         pieces = pieces.map(function(item, index, array) {
           if(item.side == 'player 1') {
             return { piece: item.piece, damage: item.damage, side: item.side, health: item.health - array[index + 2].damage };
@@ -64,13 +65,12 @@
         }).forEach(function(item) {
           if(item.side == 'player 1') player1TotalHealth = player1TotalHealth + item.health;
           else player2TotalHealth = player2TotalHealth + item.health;
+
+          player1Results.innerHTML += '<div class="piece">' + '<strong>Side:</strong> ' + item.side + ' ' + '<strong>Piece:</strong> ' + item.piece + ' ' + '<strong>Damage:</strong> ' + item.damage + ' ' + '<strong>Health:</strong> ' + item.health + '</div>' + '<br>';
+
         });
         fightButton.style.display = 'none';
         return pieces, player1TotalHealth, player2TotalHealth;
       }
-    }
-
-
-
 
 }());

@@ -122,3 +122,15 @@ header {
   width: 200px;
   display: none;
 }
+
+.fight_prompt #results {
+  margin: -100px auto 0 auto;
+  height: 300px;
+  width: 500px;
+}
+
+.fight_prompt #results .piece {
+  margin-left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
