@@ -49,7 +49,6 @@
       document.removeEventListener('drop', drop, false);
       Array.prototype.forEach.call(target, function(item) {
         if(item.children[0]) num = num + 1;
-        console.log(item, item.children, num);
       });
       if(num == 6) fightButton.style.display = 'block';
 
