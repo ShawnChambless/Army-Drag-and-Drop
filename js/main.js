@@ -67,8 +67,10 @@
           else player2TotalHealth = player2TotalHealth + item.health;
 
           player1Results.innerHTML += '<div class="piece">' + '<strong>Side:</strong> ' + item.side + ' ' + '<strong>Piece:</strong> ' + item.piece + ' ' + '<strong>Damage:</strong> ' + item.damage + ' ' + '<strong>Health:</strong> ' + item.health + '</div>' + '<br>';
-          resultsArea.style.display = 'block';
         });
+        if(player1TotalHealth > player2TotalHealth) player1Results.innerHTML += '<h1 class="winner">Player 1 wins!</h1>';
+        else player1Results.innerHTML += '<h1 class="winner">Player 2 wins!</h1>';
+        resultsArea.style.display = 'block';
         fightButton.style.display = 'none';
         return pieces, player1TotalHealth, player2TotalHealth;
       }
