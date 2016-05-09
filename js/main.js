@@ -42,11 +42,16 @@
     }
 
     function drop(e) {
+      var num = 0;
       var data = e.dataTransfer.getData('text');
       e.target.appendChild(document.getElementById(data));
       document.removeEventListener('dragstart', dragStart, false);
       document.removeEventListener('drop', drop, false);
-      if(target[target.length - 1].childNodes.length > 0) fightButton.style.display = 'block';
+      Array.prototype.forEach.call(target, function(item) {
+        if(item.children[0]) num = num + 1;
+        console.log(item, item.children, num);
+      });
+      if(num == 6) fightButton.style.display = 'block';
 
       }
       function calculateDamage() {
