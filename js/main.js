@@ -45,6 +45,7 @@
       var num = 0;
       var data = e.dataTransfer.getData('text');
       e.target.appendChild(document.getElementById(data));
+      e.target.style.boxShadow = '0 0 3px green, 0 0 3px green inset';
       document.removeEventListener('dragstart', dragStart, false);
       document.removeEventListener('drop', drop, false);
       Array.prototype.forEach.call(target, function(item) {

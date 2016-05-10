@@ -23,14 +23,21 @@
   transform: translate(-50%, 0)
 
   input
+    font-size: 1.2em
     cursor: pointer
     border: none
     height: 50px
     width: 200px
+    background: red
+    color: white
+    transition: 40ms all ease-in-out
     display: none
+    &:hover
+      height: 55px
+      width: 205px
   #results
     display: none
-    padding: 80px 0 0 0
+    padding: 40px 0 0 0
     margin: -100px auto 0 auto
     height: 305px
     width: 500px
